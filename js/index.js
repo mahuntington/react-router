@@ -14,7 +14,7 @@ class About extends React.Component{
 
 class Topics extends React.Component{
     render(){
-        return <h1>Topics</h1>
+        return <h1>Topics: {this.props.match.params.id}</h1>
     }
 }
 
@@ -26,11 +26,11 @@ ReactDOM.render(
                     <Link to="/about">About</Link>
                 </li>
                 <li>
-                    <Link to="/topics">Topics</Link>
+                    <Link to="/topics/awesome">Topics</Link>
                 </li>
             </ul>
             <Route path="/about" component={About}/>
-            <Route path="/topics" component={Topics}/>
+            <Route path="/topics/:id" component={Topics}/>
         </div>
     </Router>,
     document.querySelector('main')
